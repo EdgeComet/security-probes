@@ -751,7 +751,6 @@ Updated 2026-11-06 from scanner requests to EdgeComet sites over the last 30 day
 
 ```text
 /xmlrpc.php
-/wp-login.php
 /wp-admin/
 /wp-admin
 */phpmyadmin/*

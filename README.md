@@ -77,7 +77,7 @@ Check my site https://example.com for exposed sensitive files.
 
 ## Not on the list
 
-These look like probes but are real pages on many sites: `/credentials/`, `/wp-json/wp/v2/users`, `/.well-known/*` (a `.php` file there is on the list), `/llms.txt`, `/graphql`, `/console`, `/sitemap.xml.gz`, archives below the root like `/downloads/data.zip`, empty-slug links like `/blog/category/.html`, Magento URLs ending in `~/`.
+These look like probes but are real pages on many sites: `/credentials/`, `/wp-login.php` (the WordPress login page), `/wp-json/wp/v2/users`, `/.well-known/*` (a `.php` file there is on the list), `/llms.txt`, `/graphql`, `/console`, `/sitemap.xml.gz`, archives below the root like `/downloads/data.zip`, empty-slug links like `/blog/category/.html`, Magento URLs ending in `~/`.
 
 ## EdgeComet
 
