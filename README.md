@@ -4,7 +4,7 @@
 
 Every path on the list should answer `404` or `403`. A `200` that returns the file is a leak.
 
-- Raw list: https://edgecomet.com/public/probes.md
+- Raw list: https://raw.githubusercontent.com/EdgeComet/security-probes/main/probes.md
 - Sources: probe requests seen across [EdgeComet](#edgecomet) sites, plus [SecLists](https://github.com/danielmiessler/SecLists), [nuclei-templates](https://github.com/projectdiscovery/nuclei-templates) and [SANS ISC / DShield](https://isc.sans.edu) reports.
 - The first line of `probes.md` gives the date of the last update.
 
@@ -34,7 +34,7 @@ Run it only on sites you own or may test.
 BASE=https://example.com
 {
   printf '%s\n' /zz-missing-page-check /zz-missing-file-check.txt /zz-missing-dir-check/
-  curl -fsS https://edgecomet.com/public/probes.md |
+  curl -fsS https://raw.githubusercontent.com/EdgeComet/security-probes/main/probes.md |
     awk '/^```text/ { inblock = 1; next }
          /^```/     { inblock = 0; next }
          inblock && NF && !/[*{]/ && !/^[?]/'
@@ -64,7 +64,8 @@ A CDN rule covers only traffic through the CDN. Repeat the check against the ori
 
 ```text
 Check my site https://example.com for exposed sensitive files.
-1. Download https://edgecomet.com/public/probes.md with curl, not a web fetch.
+1. Download https://raw.githubusercontent.com/EdgeComet/security-probes/main/probes.md
+   with curl, not a web fetch.
 2. From the fenced code blocks, keep lines with no "*", no "{" and no leading "?".
 3. Request /zz-missing-page-check, /zz-missing-file-check.txt and
    /zz-missing-dir-check/ as the baseline.
